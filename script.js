@@ -2,6 +2,7 @@ const container = document.querySelector('#container');
 for (let i=1; i<=16; i++){
     const verticalGrid = document.createElement('div');
     verticalGrid.setAttribute('id',`verticalGrid-${i}`); 
+    verticalGrid.classList.add('verticalGrid');
     container.appendChild(verticalGrid); 
     
 for (let j=0; j<16; j++){

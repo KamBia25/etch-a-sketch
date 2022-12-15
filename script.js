@@ -11,4 +11,10 @@ for (let j=0; j<16; j++){
     horizontalGrid.classList.add('horizontalGrid');
     gridFoundations.appendChild(horizontalGrid);
 }
-}
+}  
+const paintBrush = document.querySelectorAll('.horizontalGrid');
+paintBrush.forEach((div) => {
+    div.addEventListener('mouseover', () => {
+    div.classList.add('color'); 
+  });
+});

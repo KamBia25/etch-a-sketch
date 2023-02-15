@@ -29,5 +29,15 @@ rangeSlider.setAttribute(`min`,`8`);
 rangeSlider.setAttribute(`value`,`16`);
 rangeSlider.setAttribute(`type`,`range`);
 body.appendChild(rangeSlider);
-const value = document.createElement('p')
-value.classList.add('text')
+
+const value = document.createElement('p');
+value.setAttribute('id','text');
+value.textContent = "Value: ";
+body.appendChild(value);
+
+const thatValue = document.querySelector('#text');
+const span = document.createElement('span')
+span.setAttribute('id','numeralValue')
+thatValue.appendChild(span)
+
+

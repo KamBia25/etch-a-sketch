@@ -12,9 +12,22 @@ for (let j=0; j<16; j++){
     gridFoundations.appendChild(horizontalGrid);
 }
 }  
+
 const paintBrush = document.querySelectorAll('.horizontalGrid');
 paintBrush.forEach((div) => {
     div.addEventListener('mouseover', () => {
     div.classList.add('color'); 
   });
 });
+
+const body = document.querySelector('#container');
+const rangeSlider = document.createElement('input');
+rangeSlider.setAttribute('id',`myRange`);
+rangeSlider.classList.add('slider'); 
+rangeSlider.setAttribute(`max`,`64`);
+rangeSlider.setAttribute(`min`,`8`);
+rangeSlider.setAttribute(`value`,`16`);
+rangeSlider.setAttribute(`type`,`range`);
+body.appendChild(rangeSlider);
+const value = document.createElement('p')
+value.classList.add('text')

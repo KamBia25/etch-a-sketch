@@ -38,6 +38,6 @@ body.appendChild(value);
 const thatValue = document.querySelector('#text');
 const span = document.createElement('span')
 span.setAttribute('id','numeralValue')
-thatValue.appendChild(span)
+thatValue.append(span)
 
 

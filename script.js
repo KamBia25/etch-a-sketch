@@ -1,5 +1,19 @@
-const container = document.querySelector('#container');
-for (let i=1; i<=16; i++){
+function deleteChild() {
+  var e = document.querySelector("#container");
+  var first = e.firstElementChild;
+  while (first) {
+      first.remove();
+      first = e.firstElementChild;
+  }
+}
+
+const main = document.querySelector('#main')
+const mainContainer = document.createElement('div')
+mainContainer.setAttribute('id','container')
+main.appendChild(mainContainer);
+
+var container = document.querySelector('#container');
+  for (let i=1; i<=16; i++){
     const verticalGrid = document.createElement('div');
     verticalGrid.setAttribute('id',`verticalGrid-${i}`); 
     verticalGrid.classList.add('verticalGrid');
@@ -12,7 +26,6 @@ for (let j=0; j<16; j++){
     gridFoundations.appendChild(horizontalGrid);
 }
 }  
-
 const paintBrush = document.querySelectorAll('.horizontalGrid');
 paintBrush.forEach((div) => {
     div.addEventListener('mouseover', () => {
@@ -20,7 +33,8 @@ paintBrush.forEach((div) => {
   });
 });
 
-const body = document.querySelector('#container');
+
+const body = document.querySelector('#main');
 const rangeSlider = document.createElement('input');
 rangeSlider.setAttribute('id',`myRange`);
 rangeSlider.classList.add('slider'); 
@@ -46,3 +60,29 @@ output.innerHTML = slider.value;
 slider.oninput = function() {
     output.innerHTML = this.value;
   }
+
+
+slider.onchange = function() {
+  deleteChild()
+  var sizeofGrid = parseInt(document.getElementById("numeralValue").innerHTML);
+  for (let i=1; i<=sizeofGrid; i++){
+    const verticalGrid = document.createElement('div');
+    verticalGrid.setAttribute('id',`verticalGrid-${i}`); 
+    verticalGrid.classList.add('verticalGrid');
+    container.appendChild(verticalGrid); 
+    
+for (let j=0; j<sizeofGrid; j++){
+    let gridFoundations= document.querySelector(`#verticalGrid-${i}`);
+    const horizontalGrid = document.createElement('div');
+    horizontalGrid.classList.add('horizontalGrid');
+    gridFoundations.appendChild(horizontalGrid);
+
+}
+}
+const paintBrush = document.querySelectorAll('.horizontalGrid');
+paintBrush.forEach((div) => {
+    div.addEventListener('mouseover', () => {
+    div.classList.add('color'); 
+  });
+});
+}

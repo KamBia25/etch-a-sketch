@@ -7,9 +7,22 @@ function deleteChild() {
   }
 }
 
-const main = document.querySelector('#main')
-const mainContainer = document.createElement('div')
-mainContainer.setAttribute('id','container')
+const headerBody = document.querySelector('body');
+const header = document.createElement("header");
+headerBody.appendChild(header);
+const headerText = document.querySelector('header');
+const firstHeader = document.createElement("h1");
+firstHeader.textContent = "Etch-a-Sketch";
+headerText.appendChild(firstHeader);
+
+const addMain = document.querySelector('body');
+const mainDiv = document.createElement('div');
+mainDiv.setAttribute('id','main');
+addMain.appendChild(mainDiv);
+
+const main = document.querySelector('#main');
+const mainContainer = document.createElement('div');
+mainContainer.setAttribute('id','container');
 main.appendChild(mainContainer);
 
 var container = document.querySelector('#container');
@@ -86,3 +99,7 @@ paintBrush.forEach((div) => {
   });
 });
 }
+
+const bodyFooter = document.querySelector('body');
+const footer = document.createElement("footer");
+bodyFooter.appendChild(footer);

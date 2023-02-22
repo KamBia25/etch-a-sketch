@@ -7,7 +7,12 @@ function deleteChild() {
   }
 }
 
-const headerBody = document.querySelector('body');
+const webPage = document.querySelector('body')
+  const page = document.createElement('div')
+  page.classList.add('page')
+  webPage.appendChild(page);
+
+const headerBody = document.querySelector('.page');
   const header = document.createElement("header");
   headerBody.appendChild(header);
 
@@ -17,7 +22,7 @@ const headerText = document.querySelector('header');
   headerText.appendChild(firstHeader);
 
 
-const addMain = document.querySelector('body');
+const addMain = document.querySelector('.page');
   const mainDiv = document.createElement('div');
   mainDiv.setAttribute('id','main');
   addMain.appendChild(mainDiv);
@@ -130,7 +135,7 @@ paintBrush.forEach((div) => {
 
 
 
-const bodyFooter = document.querySelector('body');
+const bodyFooter = document.querySelector('.page');
   const footer = document.createElement("footer");
   bodyFooter.appendChild(footer);
 

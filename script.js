@@ -47,12 +47,6 @@ for (let j=0; j<16; j++){
     gridFoundations.appendChild(horizontalGrid);
 }
 }  
-// const paintBrush = document.querySelectorAll('.horizontalGrid');
-// paintBrush.forEach((div) => {
-//     div.addEventListener('mouseover', () => {
-//     div.classList.add('color'); 
-//   });
-// });
 
 
 const body = document.querySelector('#main');
@@ -76,10 +70,10 @@ const thatValue = document.querySelector('#text');
   thatValue.append(span)
 
 const color = document.querySelector('#main');
-  const colorChange = document.createElement('input');
-  colorChange.setAttribute('type','color');
-  colorChange.setAttribute('id','colorChange')
-  color.appendChild(colorChange);
+  const colorChanger = document.createElement('input');
+  colorChanger.setAttribute('type','color');
+  colorChanger.setAttribute('id','colorChange')
+  color.appendChild(colorChanger);
 
 
 var slider = document.getElementById("myRange");
@@ -88,7 +82,8 @@ var slider = document.getElementById("myRange");
   slider.oninput = function() {
     output.innerHTML = this.value;
     }
-
+var colorChange;
+var defaultColor = "#0000ff";
 
 slider.onchange = function() {
   deleteChild()
@@ -104,34 +99,28 @@ for (let j=0; j<sizeofGrid; j++){
     const horizontalGrid = document.createElement('div');
     horizontalGrid.classList.add('horizontalGrid');
     gridFoundations.appendChild(horizontalGrid);
-
 }
 }
-// const paintBrush = document.querySelectorAll('.horizontalGrid');
-// paintBrush.forEach((div) => {
-//     div.addEventListener('mouseover', () => {
-//     div.classList.add('color'); 
-//   });
-// });
-// }
-
-let colorChange;
-const defaultColor = "#0000ff";
-window.addEventListener("load", startup, false);
-function startup() {
-  colorChange = document.querySelector("#colorChange");
-  colorChange.value = defaultColor;
-  colorChange.select();
-}
-
-}
-const paintBrush = document.querySelectorAll('.horizontalGrid');
+var paintBrush = document.querySelectorAll('.horizontalGrid');
 paintBrush.forEach((div) => {
     div.addEventListener('mouseover', () => {
      div.style.backgroundColor =colorChange.value; 
   });
 });
+}
+window.addEventListener("load", startup, false);
+function startup() {
+  colorChange = document.querySelector("#colorChange");
+  colorChange.value = defaultColor;
+  colorChange.select();
 
+var paintBrush = document.querySelectorAll('.horizontalGrid');
+paintBrush.forEach((div) => {
+    div.addEventListener('mouseover', () => {
+     div.style.backgroundColor =colorChange.value; 
+  });
+});
+}
 
 
 

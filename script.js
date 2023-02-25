@@ -128,8 +128,3 @@ const bodyFooter = document.querySelector('.page');
   const footer = document.createElement("footer");
   bodyFooter.appendChild(footer);
 
-
-
-
-
-

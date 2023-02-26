@@ -7,9 +7,9 @@ function deleteChild() {
   }
 }
 
-const webPage = document.querySelector('body')
-  const page = document.createElement('div')
-  page.classList.add('page')
+const webPage = document.querySelector('body');
+  const page = document.createElement('div');
+  page.classList.add('page');
   webPage.appendChild(page);
 
 const headerBody = document.querySelector('.page');
@@ -59,17 +59,23 @@ const body = document.querySelector('#main');
   rangeSlider.setAttribute(`type`,`range`);
   body.appendChild(rangeSlider);
 
-const value = document.createElement('p');
+const bottomBar = document.querySelector("#main");
+  const valueDisplay = document.createElement("div");
+  valueDisplay.setAttribute("id","bottomBar");
+  bottomBar.appendChild(valueDisplay);
+
+const valueContainer=document.querySelector("#bottomBar");
+  const value = document.createElement('p');
   value.setAttribute('id','text');
   value.textContent = "Value: ";
-  body.appendChild(value);
+  valueContainer.appendChild(value);
 
 const thatValue = document.querySelector('#text');
   const span = document.createElement('span');
   span.setAttribute('id','numeralValue');
   thatValue.append(span)
 
-const color = document.querySelector('#main');
+const color = document.querySelector('#bottomBar');
   const colorChanger = document.createElement('input');
   colorChanger.setAttribute('type','color');
   colorChanger.setAttribute('id','colorChange')
@@ -121,10 +127,3 @@ paintBrush.forEach((div) => {
   });
 });
 }
-
-
-
-const bodyFooter = document.querySelector('.page');
-  const footer = document.createElement("footer");
-  bodyFooter.appendChild(footer);
-
